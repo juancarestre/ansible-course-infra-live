@@ -14,7 +14,7 @@ terraform {
     commands = get_terraform_commands_that_need_vars()
 
     arguments = [
-      "-var-file=../../../../../config/stage-vars.tfvars",
+      "-var-file=${get_terragrunt_dir()}/../../config/stage-vars.tfvars",
     ]
   }
 }
