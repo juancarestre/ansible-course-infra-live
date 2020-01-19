@@ -3,7 +3,7 @@ remote_state {
   config = {
     bucket = "juancrestre-terraform-states"
 
-    key = "dev/${path_relative_to_include()}/terraform.tfstate"
+    key = "stage/${path_relative_to_include()}/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
   }
@@ -14,7 +14,7 @@ terraform {
     commands = get_terraform_commands_that_need_vars()
 
     arguments = [
-      "-var-file=../../../../../config/dev-vars.tfvars",
+      "-var-file=../../../../../config/stage-vars.tfvars",
     ]
   }
 }
